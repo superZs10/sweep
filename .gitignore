@@ -1,0 +1,16 @@
+# 构建产物
+/dist/
+*.exe
+*.test
+*.out
+
+# 本地工具链
+/toolchains/
+
+# 编辑器
+.vscode/
+.idea/
+
+# 系统
+.DS_Store
+Thumbs.db
