@@ -13,24 +13,7 @@ Windows 上的磁盘清理工具通常走两个极端：`cleanmgr` 是一个黑�
 **sweep 把"垃圾"拆成一条条可读的规则。** 它先只读扫描，告诉你每一类占多少
 空间、在哪个路径、风险多大；再由你决定删不删。
 
-```console
-$ sweep scan
-
-扫描完成，用时 193ms
-
-  规则                  名称              类别            大小  文件  风险
-  ──────────────────────────────────────────────────────────────────────────
-  cache.browser         浏览器缓存        cache         705 MB  7146  安全
-  dev.pnpm              pnpm 缓存         dev           587 MB  8971  安全
-  dev.pip               pip 缓存          dev         33.20 MB   134  安全
-  temp.user             用户临时文件      temp        32.93 MB   159  安全
-  cache.gpu             显卡着色器缓存    cache        6.90 MB   126  安全
-  installers.downloads  下载目录旧安装包  installers   5.38 MB     1  高风险
-  cache.thumbnails      缩略图缓存        cache        3.01 MB    15  安全
-  system.recyclebin     回收站            system         387 B     3  谨慎
-  合计                                                 1.34 GB  16555
-  有 13 处路径因权限不足未能统计
-```
+<img src="docs/screenshot.png" alt="sweep scan 输出，按规则列出可清理项、大小、文件数和风险等级" width="860">
 
 ## 特性
 
