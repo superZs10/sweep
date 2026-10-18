@@ -82,12 +82,15 @@ func run(argv []string) int {
 
 func parseArgs(argv []string) (*options, error) {
 	o := &options{}
-	if len(argv) == 0 {
-		return o, nil
-	}
-	o.cmd = argv[0]
 
-	for i := 1; i < len(argv); i++ {
+	// 第一个参数以 - 开头时说明没写子命令，例如 `sweep --help`
+	start := 0
+	if len(argv) > 0 && !strings.HasPrefix(argv[0], "-") {
+		o.cmd = argv[0]
+		start = 1
+	}
+
+	for i := start; i < len(argv); i++ {
 		arg := argv[i]
 		value := ""
 		hasValue := false
